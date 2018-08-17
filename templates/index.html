@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<html>
+
+<head>
+    <title>Login/Registration</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 133px;
+            display: inline-block;
+            background: white;
+            border: 10px solid black;
+            text-align: right;
+        }
+       
+        
+        .box2 {
+            width: 300px;
+            height: 67px;
+            display: inline-block;
+            background: white;
+            border: 10px solid black;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Please Register</h3>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+    <div class= "box1">
+    <form action='/process' , method='POST'>
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text">
+        <br>
+        First Name:
+        <input type="text" name="fname">
+        <br>
+        Last Name:
+        <input type="text" name="lname">
+        <br>
+        Password:
+        <input type="password" name="password">
+        <br>
+        Confirm Password:
+        <input type="password" name="cpassword">
+        <br>
+        <input id = "submit" type="submit" value="Submit">
+        
+    </form>
+    </div>
+    <h3>Please Login</h3>
+    <div class= "box2">
+        <form action='/login' , method='POST'>
+            <label for="email">Email:</label>
+            <input id="email_check" name="email_check" type="text">
+            <br>
+            Password:
+            <input type="password" name="password">
+            <br>
+            <input id = "submit" type="submit" value="Submit">
+            
+        </form>
+        </div>
+       
+           
+
+
+</body>
+
+</html>
+
